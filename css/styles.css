@@ -80,11 +80,18 @@ Header-bar
 NAV
 *******************************/
 
+
 nav ul {
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-flex-content: space-between;
+	-webkit-flex-wrap: wrap;
 	text-align: center;
-	margin:0; 
-	padding:0; 
+/*	margin:0; 
+	padding:0; */
 	list-style:none;
+/*	align-items: center;*/
+    justify-content: center;
 }
 
 nav li{
@@ -128,6 +135,7 @@ Slider
 
 .radio{
 	z-index: 200;
+	/*push down to bottom of slide*/
 }
 
 .slide1 {
@@ -294,13 +302,27 @@ Hamburger Nav Bar
 Media Queries / Responsiveness
 *******************************/
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
 /*Single Column Layout*/
+nav a:hover {
+	background-color: transparent;
+	color: blue;
+}	
 
+.header-bar {
+	display: none;
+}
 
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (max-width: 660px) {
 	/*Double Column Layout use nth-child/clear left to get responsiveness*/
 	
+}
+
+@media screen and (max-width: 769px) {
+	nav ul {
+		flex-direction: row;
+		justify content: space-between;
+	}
 }
