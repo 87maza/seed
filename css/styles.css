@@ -6,13 +6,29 @@
 }
 
 .container{
-	margin: 0 10% 0 10%;
+	margin: 0 5% 0 5%;
 	
 }
 
+.mainlogo{
+	text-align: center;	
+	padding: 2em 0;
+}
+
 img[alt="logo"] {
-	display: block;
+	display: inline-block;
     margin: 0 auto;
+
+
+}
+.search {
+	border: 0;
+	border-bottom: .1em solid black;
+	display: inline-block;
+	right: 4em;
+}
+.search:focus {
+    outline: -webkit-focus-ring-color 0;
 }
 
 
@@ -26,21 +42,27 @@ Header-bar
 *******************************/
 .header-bar{
 	background-color: lightgrey;
-
+	padding: 4px;
 }
 
 .header-bar ul{
+
 	text-align: center;
 	margin:0; 
 	padding:0; 
 	list-style:none;
 }
+.header-bar li:first-child {
+	letter-spacing: 2px;
+	padding-right: 10em;
+}
 .header-bar li{
+	letter-spacing: 4px;
 	 display: inline;
 }
 
 .header-bar a {
-	padding: 15px 10px;
+	margin: 15px 10px;
 	text-decoration: none;
 	color: white;
 }
@@ -62,7 +84,7 @@ nav li{
 }
 
 nav a {
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 1.25em;
 	padding: 15px 10px;
 	text-decoration: none;
@@ -71,6 +93,53 @@ nav a {
 	letter-spacing: 3px;
 
 }
+
+/******************************
+Slider
+*******************************/
+
+.wrap{
+	height: 46em;
+	width: 100%;
+	position:relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+.slide{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	background-size: cover;
+	-webkit-transition: left 0s .75s;
+	transition: left 0s .75s;
+}
+
+.radio{
+	z-index: 200;
+}
+
+.slide1 {
+	background-image: url('http://cdn.shopify.com/s/files/1/0931/8668/files/lookbookunderaspell0294_1024x1024.jpg?16351481176896221475');
+}
+.slide2 {
+	background-image: url('http://www.metalgearinformer.com/wp-content/uploads/2014/10/MGSV-The-Phantom-Pain-Screen-Big-Boss-and-DD.jpg');
+}
+.slide3 {
+	background-image: url('http://cdn.shopify.com/s/files/1/0931/8668/t/2/assets/slide1.jpg?9793008562211306952');
+}
+.slide4 {
+	background-image: url('http://images.alphacoders.com/564/564986.jpg');
+}
+
+[id^="ids"]:checked + .slide { 
+	left: 0;
+	z-index: 100;
+	-webkit-transition: left .65s ease-out;
+	transition: left .65s ease-out;
+}
+
 
 /******************************
 Rings Bracelets Necklace
@@ -87,25 +156,34 @@ Rings Bracelets Necklace
 
 }
 
-.rbn img{
+.rings, .brace, .neck {
 	position: relative;
+}
+.rbn img{
 	width: 19.938em;
 	height: 25.438em;
+	position: absolute;
 }
+
 .row{
 	font-family: 'Open Sans', sans-serif;
 }
 .rbn-text{
-	width: 19.688em;
-	height: 1.750em;
 	position: absolute;
-	border: 2px solid #fff;
+   top: 200px;
+   left: 0;
+   margin: 0 auto;
+   width: 19.688em;
+   height: 1.750em;
+   border: .125em solid #fff;
+
 
 }
 
 .rbn-text-par{
 	width: 19.688em;
 	height: 2.750em;
+	margin: 0 auto;
 	position: absolute;
 }
 
