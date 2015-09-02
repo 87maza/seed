@@ -1,13 +1,21 @@
-/*PLEASE COMMENT YOUR STUFF*/
-
 *{
 	box-sizing: border-box;
 	margin: 0;
 }
 
+html, body {
+/*	height: 100%;
+	width: 100%;*/
+	padding: 0;
+	height:100vh;
+	flex-direction: column;
+}
+
 .container{
 	margin: 0 5% 0 5%;
-	
+	position: relative;
+	/*min-height: 100%;*/
+	flex:1;
 }
 
 .mainlogo{
@@ -86,12 +94,13 @@ nav li{
 nav a {
 	font-weight: 600;
 	font-size: 1.25em;
-	padding: 15px 10px;
 	text-decoration: none;
 	color: black;
-	padding: 1.563em;
+	padding: .75em 1.563em;
 	letter-spacing: 3px;
-
+}
+nav a:hover {
+	background-color: lightgrey;
 }
 
 /******************************
@@ -113,6 +122,7 @@ Slider
 	z-index: 10;
 	background-size: cover;
 	-webkit-transition: left 0s .75s;
+	-moz-transition: left 0s .75s;
 	transition: left 0s .75s;
 }
 
@@ -137,6 +147,7 @@ Slider
 	left: 0;
 	z-index: 100;
 	-webkit-transition: left .65s ease-out;
+	-moz-transition: left .65s ease-out;
 	transition: left .65s ease-out;
 }
 
@@ -153,16 +164,30 @@ Rings Bracelets Necklace
 	color: white;
 	text-align: center;
 	margin: 3.5em 2.5em 3em 2.5em;
-
 }
 
 .rings, .brace, .neck {
 	position: relative;
+	width: 19.938em;
+	height: 25.438em;
+	overflow: auto;
 }
 .rbn img{
 	width: 19.938em;
 	height: 25.438em;
-	position: absolute;
+	position: inherit;
+	opacity: .5;
+	-moz-transition:-moz-transform 0.5s ease-in; 
+	-webkit-transition:-webkit-transform 0.5s ease-in; 
+	-o-transition:-o-transform 0.5s ease-in;
+}
+
+.rbn img:hover{
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+	opacity: 1;
 }
 
 .row{
@@ -191,12 +216,17 @@ Rings Bracelets Necklace
 FOOTER
 *******************************/
 
-footer ul{
-	clear: both;
+footer {
+	width: 100%;
 	margin:0; 
 	padding:0; 
 	list-style:none;
+	height: 2em;
 
+	background-color: lightgrey;
+	position: absolute;
+	bottom: 0;
+	left:0;
 }
 
 footer li {
@@ -209,6 +239,56 @@ footer a{
 
 
 
+/******************************
+HORIZONTAL INSTAGRAM API SCROLLER
+*******************************/
+
+#scroll {
+width:100%;
+margin:0px auto;
+background:#ffffff;
+overflow-y:hidden;
+
+}
+#scroll ul {
+    margin:0; 
+    padding:0;
+    display:table;
+    list-style:none;
+}
+#scroll li {
+padding:10px 100px;
+text-align:center;
+display:table-cell;
+    vertical-align:middle;
+    border:1px solid #eee;
+}
+#scroll img {
+border:0;
+display:block;
+margin:0px auto;
+}
+
+/******************************
+Hamburger Nav Bar
+*******************************/
+#burger {
+	float: left;
+	padding: 2px 5px;
+	width: 20px;
+	height: 24px;	
+}
+#burger div{
+	width: 15px;
+	height: 4px;
+	background: darkgrey;
+	margin:3px 0px;
+	border-radius: 4px;
+}
+#burger:hover {
+		border: blue solid 1px;
+}
+
 
 /******************************
 Media Queries / Responsiveness
@@ -216,6 +296,8 @@ Media Queries / Responsiveness
 
 @media screen and (min-width: 480px) {
 /*Single Column Layout*/
+
+
 }
 
 @media screen and (min-width: 660px) {
